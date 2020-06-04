@@ -1,0 +1,39 @@
+$primary-color: #121111;
+$secondary-color: #fff;
+
+.topbar {
+  width: 100%;
+  height: 80px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: $primary-color;
+  color: $secondary-color;
+
+  &__content {
+    width: 80%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  h1 {
+    font-size: 1.5em;
+    text-transform: uppercase;
+  }
+
+  &__buttons-container {
+    width: 64px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__button {
+    border: none;
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+  }
+}
