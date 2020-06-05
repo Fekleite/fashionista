@@ -1,0 +1,39 @@
+.filterBar {
+  width: 80%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  margin-top: 80px;
+  color: #121111;
+
+  &__content {
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__buttons-container {
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: #121111;
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
