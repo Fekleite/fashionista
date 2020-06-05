@@ -7,6 +7,7 @@ $secondary-color: #fff;
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 5;
   background-color: $primary-color;
   color: $secondary-color;
 
