@@ -16,7 +16,7 @@ const Product = () => {
           <h2>Bolsa Flap Triangle</h2>
           <p>Cor: CARAMELO</p>
           <div className="product__prices">
-            <div className="product__prices--column">
+            <div className="product__prices--row">
               <span className="product__price--sale">R$ 199,90</span>
               <span className="product__price">R$ 159,90</span>
             </div>
@@ -24,10 +24,10 @@ const Product = () => {
           </div>
           <p>Escolha um tamanho:</p>
           <div className="product__sizes">
-            <button>U</button>
-            <button>U</button>
+            <button className="product__button--size">U</button>
+            <button className="product__button--size">U</button>
           </div>
-          <button>Adcionar à sacola</button>
+          <button className="product__button">Adcionar à sacola</button>
         </div>
       </div>
     </div>
