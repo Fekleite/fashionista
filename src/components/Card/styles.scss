@@ -31,6 +31,11 @@ $breakpoint-laptop: 1024px;
     }
   }
 
+  &__link {
+    color: #121111;
+    text-decoration: none;
+  }
+
   &__content {
     width: 100%;
   }
