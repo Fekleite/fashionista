@@ -1,0 +1,93 @@
+.search {
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #f2f2f2;
+  opacity: 1;
+
+  &__header {
+    width: 90%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    color: #121111;
+    text-transform: uppercase;
+  }
+
+  &__button {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  &__title {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    h3 {
+      margin-left: -24px;
+    }
+  }
+
+  &__form {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__form-input {
+    width: 90%;
+    height: 40px;
+    border: none;
+    border-radius: 6px;
+    padding-left: 24px;
+    font-size: 1.1em;
+    box-shadow: 2px 3px 13px -1px #64646479;
+  }
+
+  &__results {
+    width: 100%;
+    height: calc(100vh - 200px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+  }
+
+  &__results--loading {
+    width: 100%;
+    height: calc(100vh - 200px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__animation {
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    background-color: #393939;
+    animation: bounce 1s infinite alternate;
+  }
+}
+
+@keyframes bounce {
+  from {
+    transform: translateY(0px);
+    background-color: #f2f2f2;
+  }
+  to {
+    transform: translateY(-16px);
+    background-color: #393939;
+  }
+}

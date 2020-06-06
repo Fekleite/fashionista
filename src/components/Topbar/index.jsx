@@ -4,12 +4,18 @@ import { FiSearch, FiShoppingBag } from "react-icons/fi";
 import "./styles.scss";
 
 import Bag from "../Bag";
+import Search from "../Search";
 
 const Topbar = () => {
   const [showBag, setShowBag] = useState(false);
+  const [showSearch, setShowSearch] = useState(false);
 
   function handleBag() {
     setShowBag(!showBag);
+  }
+
+  function handleSearch() {
+    setShowSearch(!showSearch);
   }
 
   return (
@@ -20,7 +26,7 @@ const Topbar = () => {
 
           <div className="topbar__buttons-container">
             <button className="topbar__button">
-              <FiSearch size={24} color="#ffffff" />
+              <FiSearch size={24} color="#ffffff" onClick={handleSearch} />
             </button>
 
             <button className="topbar__button" onClick={handleBag}>
@@ -31,6 +37,7 @@ const Topbar = () => {
       </header>
 
       {showBag && <Bag handleBag={handleBag} />}
+      {showSearch && <Search handleSearch={handleSearch} />}
     </>
   );
 };
