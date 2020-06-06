@@ -2,8 +2,16 @@ import React from "react";
 
 import "./styles.scss";
 
+import Topbar from "../../components/Topbar";
+import Product from "../../components/Product";
+
 const Detail = () => {
-  return <h1>Hello product</h1>;
+  return (
+    <>
+      <Topbar />
+      <Product />
+    </>
+  );
 };
 
 export default Detail;
