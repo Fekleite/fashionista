@@ -1,8 +1,23 @@
+$breakpoint-tablet: 768px;
+$breakpoint-laptop: 1024px;
+
 .cards {
-  width: 80%;
+  width: 90%;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  justify-content: space-between;
+  grid-template-columns: 1;
+  gap: 24px;
   margin: auto;
   margin-top: 16px;
+
+  @media (min-width: $breakpoint-laptop) {
+    width: 80%;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    justify-content: space-between;
+    margin: auto;
+    margin-top: 16px;
+  }
+}
+
+@media (min-width: $breakpoint-tablet) {
 }
