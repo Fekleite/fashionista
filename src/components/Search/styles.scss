@@ -1,12 +1,20 @@
+$breakpoint-tablet: 768px;
+$breakpoint-laptop: 1024px;
+
 .search {
   z-index: 10;
   position: absolute;
   top: 0;
-  left: 0;
+  right: 0;
   width: 100%;
   height: 100vh;
   background-color: #f2f2f2;
   opacity: 1;
+
+  @media screen and (min-width: $breakpoint-laptop) {
+    width: 30%;
+    right: 0;
+  }
 
   &__header {
     width: 90%;
@@ -53,6 +61,7 @@
     padding-left: 24px;
     font-size: 1.1em;
     box-shadow: 2px 3px 13px -1px #64646479;
+    outline: none;
   }
 
   &__results {
