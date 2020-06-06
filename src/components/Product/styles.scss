@@ -5,13 +5,18 @@ $breakpoint-laptop: 1024px;
   width: 90%;
   display: flex;
   flex-direction: column;
-  align-items: center;
   margin: auto;
-  margin-top: 104px;
+  margin-top: 96px;
   margin-bottom: 24px;
 
   @media screen and (min-width: $breakpoint-laptop) {
     width: 80%;
+  }
+
+  &__back-link {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 8px;
   }
 
   &__content {
@@ -84,6 +89,7 @@ $breakpoint-laptop: 1024px;
 
   &__price--sale {
     color: #777777;
+    font-style: italic;
     text-decoration: line-through;
   }
 

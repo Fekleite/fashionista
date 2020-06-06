@@ -1,10 +1,17 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { FiArrowLeft } from "react-icons/fi";
 
 import "./styles.scss";
 
 const Product = () => {
   return (
     <div className="product">
+      <div className="product__back-link">
+        <Link to="/">
+          <FiArrowLeft color="#121111" size={24} />
+        </Link>
+      </div>
       <div className="product__content">
         <div className="product__image">
           <img
