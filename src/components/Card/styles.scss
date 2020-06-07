@@ -12,6 +12,10 @@ $breakpoint-laptop: 1024px;
   background-color: #fff;
   box-shadow: 2px 3px 13px -1px #64646479;
 
+  @media screen and (min-width: $breakpoint-laptop) {
+    margin-bottom: 16px;
+  }
+
   &__seal {
     position: absolute;
     top: 6px;

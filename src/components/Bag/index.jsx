@@ -8,10 +8,6 @@ import BagCard from "../BagCard";
 const Bag = ({ handleBag }) => {
   const [bag, setBag] = useState(0);
 
-  useEffect(() => {
-    setBag(5);
-  }, []);
-
   return (
     <div className="bag">
       <header className="bag__header">
