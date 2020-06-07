@@ -6,16 +6,9 @@ import Topbar from "../../components/Topbar";
 import FilterBar from "../../components/FilterBar";
 import Card from "../../components/Card";
 
-const Home = () => {
-  function handleScroll() {
-    let top = document.getElementById("top");
-    if (document.documentElement.scrollTop > 5) {
-      top.classList.add("scroll");
-    } else {
-      top.classList.remove("scroll");
-    }
-  }
+import { handleScroll } from "../../utils";
 
+const Home = () => {
   useEffect(() => {
     window.onscroll = () => handleScroll();
   }, []);
