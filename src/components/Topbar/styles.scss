@@ -48,5 +48,6 @@ $breakpoint-laptop: 1024px;
 }
 
 .scroll {
+  z-index: 12;
   background-color: $primary-color;
 }

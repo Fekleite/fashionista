@@ -1,14 +1,22 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { FiArrowLeft } from "react-icons/fi";
 
 import "./styles.scss";
 
+import SearchCard from "../SearchCard";
+
 const Search = ({ handleSearch }) => {
+  const [search, setSearch] = useState("");
+
+  useEffect(() => {
+    setSearch("pesquisa");
+  }, []);
+
   return (
     <div className="search">
       <header className="search__header">
         <button className="search__button" onClick={handleSearch}>
-          <FiArrowLeft size={24} color="#121111" />
+          <FiArrowLeft size={24} color="#f2f2f2" />
         </button>
         <div className="search__title">
           <h3>Buscar produtos</h3>
@@ -21,9 +29,19 @@ const Search = ({ handleSearch }) => {
           placeholder="Buscar por produtos..."
         />
       </div>
-      <div className="search__results--loading">
-        <span className="search__animation" />
-      </div>
+      {search === "" ? (
+        <div className="search__results--loading">
+          <span className="search__animation" />
+        </div>
+      ) : (
+        <div className="search__results">
+          <SearchCard />
+          <SearchCard />
+          <SearchCard />
+          <SearchCard />
+          <SearchCard />
+        </div>
+      )}
     </div>
   );
 };

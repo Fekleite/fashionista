@@ -8,7 +8,7 @@ $breakpoint-laptop: 1024px;
   right: 0;
   width: 100%;
   height: 100vh;
-  background-color: #f2f2f2;
+  background-color: #121111;
   opacity: 1;
 
   @media screen and (min-width: $breakpoint-laptop) {
@@ -23,7 +23,7 @@ $breakpoint-laptop: 1024px;
     align-items: center;
     justify-content: center;
     margin: auto;
-    color: #121111;
+    color: #f2f2f2;
     text-transform: uppercase;
   }
 
@@ -55,21 +55,24 @@ $breakpoint-laptop: 1024px;
 
   &__form-input {
     width: 90%;
-    height: 40px;
+    height: 48px;
     border: none;
-    border-radius: 6px;
+    border-radius: 4px;
     padding-left: 24px;
     font-size: 1.1em;
-    box-shadow: 2px 3px 13px -1px #64646479;
+    background-color: #292626;
+    color: #f2f2f2;
+    opacity: 0.8;
     outline: none;
   }
 
   &__results {
     width: 100%;
-    height: calc(100vh - 200px);
+    height: calc(100vh - 120px);
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-bottom: 24px;
     overflow-y: scroll;
   }
 

@@ -1,0 +1,49 @@
+$breakpoint-tablet: 768px;
+$breakpoint-laptop: 1024px;
+
+.cardSearch {
+  width: 90%;
+  height: 120px;
+  display: flex;
+  margin: 16px 8px auto;
+  border-radius: 4px;
+  background-color: #f2f2f2;
+
+  &__image {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      height: 90%;
+    }
+  }
+
+  &__infos {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 16px;
+  }
+
+  &__name {
+    font-size: 1em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+
+    @media screen and (min-width: $breakpoint-laptop) {
+      font-size: 0.9em;
+    }
+  }
+
+  &__price {
+    font-size: 0.9em;
+    color: #121111;
+
+    @media screen and (min-width: $breakpoint-laptop) {
+      font-size: 0.8em;
+    }
+  }
+}
