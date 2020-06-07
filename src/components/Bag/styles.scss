@@ -8,7 +8,7 @@ $breakpoint-laptop: 1024px;
   right: 0;
   width: 100%;
   height: 100vh;
-  background-color: #f2f2f2;
+  background-color: #121111;
   opacity: 1;
 
   @media screen and (min-width: $breakpoint-laptop) {
@@ -16,8 +16,8 @@ $breakpoint-laptop: 1024px;
   }
 
   &__header {
-    background-color: #f2f2f2;
-    color: #121111;
+    background-color: #121111;
+    color: #f2f2f2;
     text-transform: uppercase;
   }
 
@@ -54,7 +54,23 @@ $breakpoint-laptop: 1024px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-bottom: 24px;
     overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+      width: 10px;
+      background-color: #112211;
+    }
+
+    &::-webkit-scrollbar-track {
+      border-radius: 10px;
+      background-color: #121111;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background-color: #292626;
+    }
   }
 
   &__products--empty {

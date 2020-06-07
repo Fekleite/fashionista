@@ -74,6 +74,21 @@ $breakpoint-laptop: 1024px;
     align-items: center;
     padding-bottom: 24px;
     overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+      width: 10px;
+      background-color: #112211;
+    }
+
+    &::-webkit-scrollbar-track {
+      border-radius: 10px;
+      background-color: #121111;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background-color: #292626;
+    }
   }
 
   &__results--loading {

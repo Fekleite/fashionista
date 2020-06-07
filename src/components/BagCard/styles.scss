@@ -1,0 +1,99 @@
+.cardBag {
+  width: 90%;
+  height: 160px;
+  display: flex;
+  margin: 16px 8px 0;
+  border-radius: 4px;
+  background-color: #f2f2f2;
+
+  &__image {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      height: 90%;
+    }
+  }
+
+  &__description {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 16px;
+  }
+
+  &__infos {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__name {
+    text-transform: uppercase;
+    font-size: 1em;
+    margin-bottom: 8px;
+  }
+
+  &__prices {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+
+  &__price {
+    font-size: 0.8em;
+    font-weight: bold;
+    color: #121111;
+  }
+
+  &__price--installments {
+    font-size: 0.8em;
+    color: #393939;
+  }
+
+  &__sizes {
+    font-size: 1em;
+    font-weight: bold;
+    color: #121111;
+  }
+
+  &__controlls {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
+  }
+
+  &__controlls-amount {
+    span {
+      font-size: 1em;
+      margin: 0 8px;
+    }
+  }
+
+  &__button {
+    width: 24px;
+    height: 24px;
+    border: none;
+    border-radius: 4px;
+    background-color: #121111;
+    color: #fff;
+    font-weight: bold;
+    outline: none;
+    cursor: pointer;
+  }
+
+  &__button--trash {
+    width: 24px;
+    height: 24px;
+    border: none;
+    border-radius: 4px;
+    background-color: transparent;
+    color: #b62121;
+    outline: none;
+    cursor: pointer;
+  }
+}

@@ -6,10 +6,10 @@ import "./styles.scss";
 import SearchCard from "../SearchCard";
 
 const Search = ({ handleSearch }) => {
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState("pesquisa");
 
   useEffect(() => {
-    setSearch("pesquisa");
+    setSearch("");
   }, []);
 
   return (
