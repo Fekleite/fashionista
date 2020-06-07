@@ -20,7 +20,7 @@ const Topbar = () => {
 
   return (
     <>
-      <header className="topbar">
+      <header className="topbar" id="top">
         <div className="topbar__content">
           <h1>Fashionista</h1>
 

@@ -6,7 +6,7 @@ const FilterBar = () => {
   return (
     <div className="filterBar">
       <div className="filterBar__content">
-        <p>Filtrar por:</p>
+        <p>Classificar por:</p>
         <div className="filterBar__buttons-container">
           <button className="filterBar__button">Menor preço</button>
           <button className="filterBar__button">Maior preço</button>

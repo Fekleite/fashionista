@@ -8,8 +8,9 @@ $secondary-color: #fff;
   top: 0;
   left: 0;
   z-index: 5;
-  background-color: $primary-color;
+  background-color: transparent;
   color: $secondary-color;
+  transition: 0.5s ease-in-out;
 
   &__content {
     width: 80%;
@@ -37,4 +38,8 @@ $secondary-color: #fff;
     outline: none;
     cursor: pointer;
   }
+}
+
+.scroll {
+  background-color: $primary-color;
 }

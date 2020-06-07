@@ -9,7 +9,7 @@ $breakpoint-laptop: 1024px;
   justify-content: center;
   align-items: space-between;
   margin: auto;
-  margin-top: 80px;
+  margin-top: 16px;
   color: #121111;
 
   @media screen and (min-width: $breakpoint-laptop) {
@@ -26,13 +26,13 @@ $breakpoint-laptop: 1024px;
     padding-top: 16px;
 
     @media screen and (min-width: $breakpoint-laptop) {
-      width: 30%;
+      width: 35%;
       padding-top: 0;
     }
   }
 
   &__buttons-container {
-    width: 70%;
+    width: 60%;
     display: flex;
     justify-content: space-between;
   }
