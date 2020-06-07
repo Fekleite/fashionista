@@ -2,7 +2,7 @@ $breakpoint-tablet: 768px;
 $breakpoint-laptop: 1024px;
 
 .filterBar {
-  width: 80%;
+  width: 85%;
   min-height: 60px;
   display: flex;
   flex-direction: column;
@@ -13,6 +13,7 @@ $breakpoint-laptop: 1024px;
   color: #121111;
 
   @media screen and (min-width: $breakpoint-laptop) {
+    width: 80%;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -32,9 +33,13 @@ $breakpoint-laptop: 1024px;
   }
 
   &__buttons-container {
-    width: 60%;
+    width: 65%;
     display: flex;
     justify-content: space-between;
+
+    @media screen and (min-width: $breakpoint-laptop) {
+      width: 60%;
+    }
   }
 
   &__button {
