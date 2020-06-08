@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 
 import "./styles.scss";
 
@@ -7,8 +8,19 @@ import FilterBar from "../../components/FilterBar";
 import Card from "../../components/Card";
 
 import { handleScroll } from "../../utils";
+import { getProducts } from "../../services/api";
+import { setProducts } from "../../store/actions/actions";
 
 const Home = () => {
+  const products = useSelector((state) => state.products);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    getProducts().then((response) => {
+      dispatch(setProducts(response));
+    });
+  }, [dispatch]);
+
   useEffect(() => {
     window.onscroll = () => handleScroll();
   }, []);
@@ -21,14 +33,9 @@ const Home = () => {
       </div>
       <FilterBar />
       <div className="cards" id="cards">
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        {products.map((product, index) => (
+          <Card product={product} key={index} />
+        ))}
       </div>
     </>
   );

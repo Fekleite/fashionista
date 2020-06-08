@@ -3,25 +3,36 @@ import { Link } from "react-router-dom";
 
 import "./styles.scss";
 
-const Card = () => {
+import imageTemplate from "../../assets/img_padrao.jpg";
+
+const Card = ({ product }) => {
   return (
     <div className="card">
       <div className="card__seal">
-        <span>25%</span>
+        {product.on_sale ? <span>25%</span> : ""}
       </div>
       <Link to="/product" className="card__link">
         <div className="card__content">
           <div className="card__image">
-            <img
-              src="https://viniciusvinna.netlify.app/assets/api-fashionista/20002945_027_catalog_1.jpg"
-              alt="Imagem do produto"
-            />
+            {product.image === "" ? (
+              <img src={imageTemplate} alt="Produto indisponível" />
+            ) : (
+              <img src={product.image} alt={product.name} />
+            )}
           </div>
           <div className="card__information">
-            <h2>Bolsa Flap Triangle</h2>
+            <h2>{product.name}</h2>
             <div className="card__prices">
-              <span className="card__price--sale">R$ 199,90</span>
-              <span className="card__price">R$ 159,90</span>
+              {product.actual_price !== product.regular_price ? (
+                <>
+                  <span className="card__price--sale">
+                    {product.regular_price}
+                  </span>
+                  <span className="card__price">{product.actual_price}</span>
+                </>
+              ) : (
+                <span className="card__price">{product.regular_price}</span>
+              )}
             </div>
           </div>
         </div>
