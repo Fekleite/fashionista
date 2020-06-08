@@ -1,8 +1,4 @@
-$primary-color: #121111;
-$secondary-color: #fff;
-
-$breakpoint-tablet: 768px;
-$breakpoint-laptop: 1024px;
+@import "../../base";
 
 .topbar {
   width: 100%;
@@ -12,7 +8,7 @@ $breakpoint-laptop: 1024px;
   left: 0;
   z-index: 5;
   background-color: transparent;
-  color: $secondary-color;
+  color: $tertiary-color;
   transition: 0.5s ease-in-out;
 
   &__content {
@@ -23,7 +19,7 @@ $breakpoint-laptop: 1024px;
     justify-content: space-between;
     align-items: center;
 
-    @media screen and (min-width: $breakpoint-laptop) {
+    @media screen and (min-width: $breakpoint-medium) {
       width: 80%;
     }
   }

@@ -1,5 +1,4 @@
-$breakpoint-tablet: 768px;
-$breakpoint-laptop: 1024px;
+@import "../../base";
 
 .card {
   width: 90%;
@@ -9,10 +8,10 @@ $breakpoint-laptop: 1024px;
   margin: auto;
   padding: 16px 8px;
   border-radius: 8px;
-  background-color: #fff;
-  box-shadow: 2px 3px 13px -1px #64646479;
+  background-color: $tertiary-color;
+  box-shadow: 2px 3px 13px -1px $box-shadow-color;
 
-  @media screen and (min-width: $breakpoint-laptop) {
+  @media screen and (min-width: $breakpoint-medium) {
     margin-bottom: 16px;
   }
 
@@ -22,6 +21,10 @@ $breakpoint-laptop: 1024px;
     right: 0;
     z-index: 4;
 
+    @media screen and (min-width: $breakpoint-medium) {
+      top: 5px;
+    }
+
     span {
       padding: 8px 4px;
       margin-right: 12px;
@@ -30,13 +33,17 @@ $breakpoint-laptop: 1024px;
       font-size: 0.9em;
       font-weight: bold;
       text-align: center;
-      color: #fff;
-      background-color: #121111;
+      color: $tertiary-color;
+      background-color: $primary-color;
+
+      @media screen and (min-width: $breakpoint-medium) {
+        font-size: 0.8em;
+      }
     }
   }
 
   &__link {
-    color: #121111;
+    color: $primary-color;
     text-decoration: none;
   }
 
@@ -65,7 +72,7 @@ $breakpoint-laptop: 1024px;
       font-size: 1.3em;
       text-transform: uppercase;
 
-      @media screen and (min-width: $breakpoint-laptop) {
+      @media screen and (min-width: $breakpoint-medium) {
         font-size: 1.1em;
       }
     }
@@ -79,7 +86,7 @@ $breakpoint-laptop: 1024px;
     margin-top: 8px;
     font-size: 1.1em;
 
-    @media screen and (min-width: $breakpoint-laptop) {
+    @media screen and (min-width: $breakpoint-medium) {
       width: 60%;
       font-size: 0.9em;
     }
@@ -87,7 +94,7 @@ $breakpoint-laptop: 1024px;
 
   &__price {
     font-weight: bold;
-    color: #393939;
+    color: $alternative-color;
   }
 
   &__price--sale {

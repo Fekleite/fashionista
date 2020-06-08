@@ -1,5 +1,4 @@
-$breakpoint-tablet: 768px;
-$breakpoint-laptop: 1024px;
+@import "../../base";
 
 .product {
   width: 90%;
@@ -9,7 +8,7 @@ $breakpoint-laptop: 1024px;
   margin-top: 96px;
   margin-bottom: 24px;
 
-  @media screen and (min-width: $breakpoint-laptop) {
+  @media screen and (min-width: $breakpoint-medium) {
     width: 80%;
   }
 
@@ -22,7 +21,7 @@ $breakpoint-laptop: 1024px;
   &__content {
     width: 100%;
 
-    @media screen and (min-width: $breakpoint-laptop) {
+    @media screen and (min-width: $breakpoint-medium) {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
@@ -34,9 +33,9 @@ $breakpoint-laptop: 1024px;
     justify-content: center;
     align-items: center;
     border-radius: 8px;
-    background-color: #fff;
+    background-color: $tertiary-color;
 
-    @media screen and (min-width: $breakpoint-laptop) {
+    @media screen and (min-width: $breakpoint-medium) {
       width: 40%;
     }
 
@@ -49,7 +48,7 @@ $breakpoint-laptop: 1024px;
     width: 100%;
     margin-top: 16px;
 
-    @media screen and (min-width: $breakpoint-laptop) {
+    @media screen and (min-width: $breakpoint-medium) {
       width: 55%;
     }
 
@@ -61,7 +60,7 @@ $breakpoint-laptop: 1024px;
 
     p {
       font-size: 1.2em;
-      color: #363636;
+      color: $alternative-color;
     }
   }
 
@@ -77,7 +76,7 @@ $breakpoint-laptop: 1024px;
     display: flex;
     justify-content: space-between;
 
-    @media screen and (min-width: $breakpoint-laptop) {
+    @media screen and (min-width: $breakpoint-medium) {
       width: 28%;
     }
   }
@@ -104,8 +103,8 @@ $breakpoint-laptop: 1024px;
     height: 40px;
     margin-top: 8px;
     margin-right: 8px;
-    border: 2px solid #121111;
-    color: #121111;
+    border: 2px solid $primary-color;
+    color: $primary-color;
     border-radius: 4px;
     background-color: transparent;
     font-size: 1em;
@@ -116,8 +115,8 @@ $breakpoint-laptop: 1024px;
     transition: 0.3s ease-in-out;
 
     &:hover {
-      background-color: #121111;
-      color: #fff;
+      background-color: $primary-color;
+      color: $tertiary-color;
     }
   }
 
@@ -127,8 +126,8 @@ $breakpoint-laptop: 1024px;
     padding: 4px 8px;
     border: none;
     border-radius: 4px;
-    background-color: #121111;
-    color: #fff;
+    background-color: $primary-color;
+    color: $tertiary-color;
     font-size: 1.2em;
     outline: none;
     cursor: pointer;

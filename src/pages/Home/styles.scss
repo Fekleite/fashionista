@@ -1,5 +1,4 @@
-$breakpoint-tablet: 768px;
-$breakpoint-laptop: 1024px;
+@import "../../base";
 
 .photo {
   width: 100%;
@@ -22,9 +21,9 @@ $breakpoint-laptop: 1024px;
   a {
     position: absolute;
     z-index: 3;
-    color: #f2f2f2;
+    color: $secondary-color;
     padding: 12px 24px;
-    border: 2px solid #f2f2f2;
+    border: 2px solid $secondary-color;
     border-radius: 4px;
     font-size: 1.2em;
     font-weight: bold;
@@ -47,7 +46,7 @@ $breakpoint-laptop: 1024px;
   margin-top: 16px;
   padding-bottom: 24px;
 
-  @media (min-width: $breakpoint-laptop) {
+  @media (min-width: $breakpoint-medium) {
     width: 80%;
     grid-template-columns: repeat(4, 1fr);
     gap: 0;
@@ -55,7 +54,4 @@ $breakpoint-laptop: 1024px;
     margin: auto;
     margin-top: 16px;
   }
-}
-
-@media (min-width: $breakpoint-tablet) {
 }

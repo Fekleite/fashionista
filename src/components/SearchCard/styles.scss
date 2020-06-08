@@ -1,5 +1,4 @@
-$breakpoint-tablet: 768px;
-$breakpoint-laptop: 1024px;
+@import "../../base";
 
 .cardSearch {
   width: 90%;
@@ -7,7 +6,7 @@ $breakpoint-laptop: 1024px;
   display: flex;
   margin: 16px 8px 0;
   border-radius: 4px;
-  background-color: #f2f2f2;
+  background-color: $secondary-color;
 
   &__image {
     width: 40%;
@@ -33,16 +32,16 @@ $breakpoint-laptop: 1024px;
     text-transform: uppercase;
     margin-bottom: 8px;
 
-    @media screen and (min-width: $breakpoint-laptop) {
+    @media screen and (min-width: $breakpoint-medium) {
       font-size: 0.9em;
     }
   }
 
   &__price {
     font-size: 0.9em;
-    color: #121111;
+    color: $primary-color;
 
-    @media screen and (min-width: $breakpoint-laptop) {
+    @media screen and (min-width: $breakpoint-medium) {
       font-size: 0.8em;
     }
   }

@@ -1,5 +1,4 @@
-$breakpoint-tablet: 768px;
-$breakpoint-laptop: 1024px;
+@import "../../base";
 
 .search {
   z-index: 10;
@@ -8,10 +7,10 @@ $breakpoint-laptop: 1024px;
   right: 0;
   width: 100%;
   height: 100vh;
-  background-color: #121111;
+  background-color: $primary-color;
   opacity: 1;
 
-  @media screen and (min-width: $breakpoint-laptop) {
+  @media screen and (min-width: $breakpoint-medium) {
     width: 30%;
     right: 0;
   }
@@ -23,7 +22,7 @@ $breakpoint-laptop: 1024px;
     align-items: center;
     justify-content: center;
     margin: auto;
-    color: #f2f2f2;
+    color: $secondary-color;
     text-transform: uppercase;
   }
 
@@ -60,15 +59,15 @@ $breakpoint-laptop: 1024px;
     border-radius: 4px;
     padding-left: 24px;
     font-size: 1.1em;
-    background-color: #292626;
-    color: #f2f2f2;
+    background-color: $scrollbar-thumb-color;
+    color: $secondary-color;
     opacity: 0.8;
     outline: none;
   }
 
   &__results {
     width: 100%;
-    height: calc(100vh - 120px);
+    height: $modal-height;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -77,23 +76,23 @@ $breakpoint-laptop: 1024px;
 
     &::-webkit-scrollbar {
       width: 10px;
-      background-color: #112211;
+      background-color: $primary-color;
     }
 
     &::-webkit-scrollbar-track {
       border-radius: 10px;
-      background-color: #121111;
+      background-color: $primary-color;
     }
 
     &::-webkit-scrollbar-thumb {
       border-radius: 10px;
-      background-color: #292626;
+      background-color: $scrollbar-thumb-color;
     }
   }
 
   &__results--loading {
     width: 100%;
-    height: calc(100vh - 200px);
+    height: $modal-height;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -103,7 +102,7 @@ $breakpoint-laptop: 1024px;
     border-radius: 50%;
     width: 8px;
     height: 8px;
-    background-color: #393939;
+    background-color: $alternative-color;
     animation: bounce 1s infinite alternate;
   }
 }
@@ -111,10 +110,10 @@ $breakpoint-laptop: 1024px;
 @keyframes bounce {
   from {
     transform: translateY(0px);
-    background-color: #f2f2f2;
+    background-color: $secondary-color;
   }
   to {
     transform: translateY(-16px);
-    background-color: #393939;
+    background-color: $alternative-color;
   }
 }
