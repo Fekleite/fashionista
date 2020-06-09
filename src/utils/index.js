@@ -19,16 +19,16 @@ export function handleScroll() {
   }
 }
 
-export function handleToWithoutSpaces(name) {
-  const nameLower = name.toLowerCase();
-  const arrayWithoutSpaces = nameLower.split(" ");
-  const nameWithoutSpaces = arrayWithoutSpaces.join("-");
-  return nameWithoutSpaces;
-}
+// export function handleToWithoutSpaces(name) {
+//   const nameLower = name.toLowerCase();
+//   const arrayWithoutSpaces = nameLower.split(" ");
+//   const nameWithoutSpaces = arrayWithoutSpaces.join("-");
+//   return nameWithoutSpaces;
+// }
 
-export function handleToSpaces(name) {
-  const arraySpaces = name.split("-");
-  const nameLower = arraySpaces.join(" ");
-  const nameUpper = nameLower.toUpperCase();
-  return nameUpper;
-}
+// export function handleToSpaces(name) {
+//   const arraySpaces = name.split("-");
+//   const nameLower = arraySpaces.join(" ");
+//   const nameUpper = nameLower.toUpperCase();
+//   return nameUpper;
+// }
