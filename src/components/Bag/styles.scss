@@ -11,6 +11,14 @@
   opacity: 1;
 
   @media screen and (min-width: $breakpoint-medium) {
+    width: 50%;
+  }
+
+  @media screen and (min-width: $breakpoint-large) {
+    width: 40%;
+  }
+
+  @media screen and (min-width: $breakpoint-huge) {
     width: 30%;
   }
 

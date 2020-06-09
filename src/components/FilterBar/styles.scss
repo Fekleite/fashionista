@@ -26,6 +26,16 @@
     padding-top: 16px;
 
     @media screen and (min-width: $breakpoint-medium) {
+      width: 60%;
+      padding-top: 0;
+    }
+
+    @media screen and (min-width: $breakpoint-large) {
+      width: 45%;
+      padding-top: 0;
+    }
+
+    @media screen and (min-width: $breakpoint-huge) {
       width: 35%;
       padding-top: 0;
     }
@@ -37,6 +47,9 @@
     justify-content: space-between;
 
     @media screen and (min-width: $breakpoint-medium) {
+      width: 65%;
+    }
+    @media screen and (min-width: $breakpoint-huge) {
       width: 60%;
     }
   }

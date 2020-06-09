@@ -15,11 +15,19 @@
   }
 
   &__links {
-    width: 15%;
+    width: 14%;
     display: flex;
     justify-content: space-between;
 
     @media screen and (min-width: $breakpoint-medium) {
+      width: 7%;
+    }
+
+    @media screen and (min-width: $breakpoint-large) {
+      width: 5%;
+    }
+
+    @media screen and (min-width: $breakpoint-huge) {
       width: 4%;
     }
   }

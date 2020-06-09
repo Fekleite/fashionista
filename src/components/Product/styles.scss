@@ -56,11 +56,19 @@
       font-size: 1.6em;
       text-transform: uppercase;
       margin-bottom: 8px;
+
+      @media screen and (min-width: $breakpoint-medium) {
+        font-size: 1.4em;
+      }
     }
 
     p {
       font-size: 1.2em;
       color: $alternative-color;
+
+      @media screen and (min-width: $breakpoint-medium) {
+        font-size: 1.1em;
+      }
     }
   }
 
@@ -77,6 +85,14 @@
     justify-content: space-between;
 
     @media screen and (min-width: $breakpoint-medium) {
+      width: 48%;
+    }
+
+    @media screen and (min-width: $breakpoint-large) {
+      width: 36%;
+    }
+
+    @media screen and (min-width: $breakpoint-huge) {
       width: 28%;
     }
   }

@@ -12,6 +12,16 @@
   box-shadow: 2px 3px 13px -1px $box-shadow-color;
 
   @media screen and (min-width: $breakpoint-medium) {
+    min-height: 364px;
+    margin-bottom: 16px;
+  }
+
+  @media screen and (min-width: $breakpoint-large) {
+    min-height: 364px;
+    margin-bottom: 16px;
+  }
+
+  @media screen and (min-width: $breakpoint-huge) {
     min-height: 372px;
     margin-bottom: 16px;
   }
@@ -70,11 +80,19 @@
     margin-top: 16px;
 
     h2 {
-      font-size: 1.3em;
+      font-size: 1.2em;
       text-transform: uppercase;
       text-align: center;
 
       @media screen and (min-width: $breakpoint-medium) {
+        font-size: 0.9em;
+      }
+
+      @media screen and (min-width: $breakpoint-large) {
+        font-size: 1em;
+      }
+
+      @media screen and (min-width: $breakpoint-huge) {
         font-size: 1.1em;
       }
     }
