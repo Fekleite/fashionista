@@ -8,12 +8,34 @@ import BagCard from "../BagCard";
 
 const Bag = ({ handleBag, productsBag }) => {
   const [bag, setBag] = useState(0);
+  const [subTotal, setSubTotal] = useState(0);
 
   const length = localStorage.length;
+  let aux = 0;
 
   useEffect(() => {
     setBag(length);
   }, [length]);
+
+  useEffect(() => {
+    setSubTotal(aux);
+  }, [aux]);
+
+  function handleSubTotal() {
+    return productsBag
+      .map((product) => {
+        const arrayPrices = product.price.split(" ");
+        const stringPrice = arrayPrices[1];
+        const aux = stringPrice.split(",");
+        const numberPrice = Number(aux.join("."));
+        return numberPrice;
+      })
+      .reduce((total, item) => {
+        return total + item;
+      }, 0);
+  }
+
+  aux = handleSubTotal();
 
   return (
     <div className="bag">
@@ -43,7 +65,7 @@ const Bag = ({ handleBag, productsBag }) => {
       )}
 
       <footer className="bag__footer">
-        <h3>Subtotal: R$</h3>
+        <h3>Subtotal: R$ {subTotal.toFixed(2)} </h3>
       </footer>
     </div>
   );

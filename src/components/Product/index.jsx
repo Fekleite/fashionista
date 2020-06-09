@@ -15,7 +15,6 @@ const Product = ({ products }) => {
   const [size, setSize] = useState(null);
 
   const { id } = useParams();
-  console.log(id);
 
   const dispatch = useDispatch();
 
@@ -33,6 +32,7 @@ const Product = ({ products }) => {
 
   function handleClick() {
     const productBag = {
+      id: id,
       image: product.image,
       name: product.name,
       price: product.actual_price,

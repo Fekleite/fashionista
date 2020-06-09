@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { FiTrash2 } from "react-icons/fi";
 
 import "./styles.scss";
 
 const BagCard = ({ product }) => {
-  const [amount, setAmount] = useState(0);
+  const [amount, setAmount] = useState(1);
 
   function handleControllAmount(op) {
     op === "+" ? setAmount(amount + 1) : setAmount(amount - 1);
