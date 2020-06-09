@@ -6,21 +6,11 @@ export async function getProducts() {
   return products;
 }
 
-export async function getProduct(name, products) {
-  let product = null;
-  products.map((item, index) => {
-    if (item.name === name) product = index;
-    return true;
-  });
-  return products[product];
+export async function getProduct(id, products) {
+  return products[id];
 }
 
-export async function getProductSizes(name, data) {
-  let id = null;
-  data.map((item, index) => {
-    if (item.name === name) id = index;
-    return true;
-  });
+export async function getProductSizes(id, data) {
   const product = data[id];
   const sizes = [];
   const aux = product.sizes;

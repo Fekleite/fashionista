@@ -9,7 +9,7 @@ export default function Routes() {
     <BrowserRouter>
       <Switch>
         <Route path="/" exact component={Home} />
-        <Route path="/product/:name" component={Details} />
+        <Route path="/product/:id" component={Details} />
       </Switch>
     </BrowserRouter>
   );

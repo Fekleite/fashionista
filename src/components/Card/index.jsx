@@ -5,18 +5,13 @@ import "./styles.scss";
 
 import imageTemplate from "../../assets/img_padrao.jpg";
 
-import { handleToWithoutSpaces } from "../../utils";
-
-const Card = ({ product }) => {
+const Card = ({ product, id }) => {
   return (
     <div className="card">
       <div className="card__seal">
         {product.on_sale ? <span>{product.discount_percentage}</span> : ""}
       </div>
-      <Link
-        to={`/product/${handleToWithoutSpaces(product.name)}`}
-        className="card__link"
-      >
+      <Link to={`/product/${id}`} className="card__link">
         <div className="card__content">
           <div className="card__image">
             {product.image === "" ? (

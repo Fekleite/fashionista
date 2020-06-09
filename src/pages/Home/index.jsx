@@ -36,7 +36,7 @@ const Home = () => {
       <FilterBar length={productsLength} />
       <div className="cards" id="cards">
         {products.map((product, index) => (
-          <Card product={product} key={index} />
+          <Card product={product} id={index} key={index} />
         ))}
       </div>
     </>

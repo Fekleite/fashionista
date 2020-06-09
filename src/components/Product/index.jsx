@@ -6,7 +6,6 @@ import { connect, useDispatch } from "react-redux";
 import "./styles.scss";
 
 import { getProduct, getProductSizes } from "../../services/api";
-import { handleToSpaces } from "../../utils";
 
 import { setProductsBag } from "../../store/actions/actions";
 
@@ -15,18 +14,18 @@ const Product = ({ products }) => {
   const [sizes, setSizes] = useState([]);
   const [size, setSize] = useState(null);
 
-  const { name } = useParams();
-  const newName = handleToSpaces(name);
+  const { id } = useParams();
+  console.log(id);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
-    getProduct(newName, products).then(setProduct);
-  }, [newName, products]);
+    getProduct(id, products).then(setProduct);
+  }, [id, products]);
 
   useEffect(() => {
-    getProductSizes(newName, products).then(setSizes);
-  }, [newName, products]);
+    getProductSizes(id, products).then(setSizes);
+  }, [id, products]);
 
   function handleSize(item) {
     setSize(item);
