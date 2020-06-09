@@ -31,6 +31,7 @@ const Topbar = () => {
 
             <button className="topbar__button" onClick={handleBag}>
               <FiShoppingBag size={24} color="#ffffff" />
+              <span></span>
             </button>
           </div>
         </div>

@@ -6,9 +6,7 @@ export async function getProducts() {
   return products;
 }
 
-export async function getProduct(name) {
-  const response = await fetch(URL);
-  const products = await response.json();
+export async function getProduct(name, products) {
   let product = null;
   products.map((item, index) => {
     if (item.name === name) product = index;
@@ -17,9 +15,7 @@ export async function getProduct(name) {
   return products[product];
 }
 
-export async function getProductSizes(name) {
-  const response = await fetch(URL);
-  const data = await response.json();
+export async function getProductSizes(name, data) {
   let id = null;
   data.map((item, index) => {
     if (item.name === name) id = index;

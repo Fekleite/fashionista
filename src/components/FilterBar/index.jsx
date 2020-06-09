@@ -2,7 +2,7 @@ import React from "react";
 
 import "./styles.scss";
 
-const FilterBar = () => {
+const FilterBar = ({ length }) => {
   return (
     <div className="filterBar">
       <div className="filterBar__content">
@@ -14,7 +14,7 @@ const FilterBar = () => {
       </div>
 
       <div className="filterBar__quantity-products">
-        <span>22 items</span>
+        <span>{length} items</span>
       </div>
     </div>
   );

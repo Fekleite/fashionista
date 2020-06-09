@@ -1,4 +1,4 @@
-import { SET_PRODUCTS } from "../actions/actionTypes";
+import { SET_PRODUCTS, SET_PRODUCTSBAG } from "../actions/actionTypes";
 
 const INITIAL_STATE = {
   products: [],
@@ -11,6 +11,12 @@ function reducer(state = INITIAL_STATE, { type, payload }) {
       return {
         ...state,
         products: payload,
+      };
+
+    case SET_PRODUCTSBAG:
+      return {
+        ...state,
+        productsBag: [...state.productsBag, payload],
       };
 
     default:

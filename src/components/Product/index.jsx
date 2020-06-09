@@ -1,26 +1,48 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { FiArrowLeft } from "react-icons/fi";
+import { connect, useDispatch } from "react-redux";
 
 import "./styles.scss";
 
 import { getProduct, getProductSizes } from "../../services/api";
 import { handleToSpaces } from "../../utils";
 
-const Product = () => {
+import { setProductsBag } from "../../store/actions/actions";
+
+const Product = ({ products }) => {
   const [product, setProduct] = useState({});
   const [sizes, setSizes] = useState([]);
+  const [size, setSize] = useState(null);
 
   const { name } = useParams();
   const newName = handleToSpaces(name);
 
-  useEffect(() => {
-    getProduct(newName).then(setProduct);
-  }, [newName]);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    getProductSizes(newName).then(setSizes);
-  }, [newName]);
+    getProduct(newName, products).then(setProduct);
+  }, [newName, products]);
+
+  useEffect(() => {
+    getProductSizes(newName, products).then(setSizes);
+  }, [newName, products]);
+
+  function handleSize(item) {
+    setSize(item);
+  }
+
+  function handleClick() {
+    const productBag = {
+      image: product.image,
+      name: product.name,
+      price: product.actual_price,
+      installments: product.installments,
+      size,
+    };
+
+    dispatch(setProductsBag(productBag));
+  }
 
   return (
     <div className="product">
@@ -50,16 +72,26 @@ const Product = () => {
           <p>Escolha um tamanho:</p>
           <div className="product__sizes">
             {sizes.map((item, index) => (
-              <button className="product__button--size" key={index}>
+              <button
+                className="product__button--size"
+                key={index}
+                onClick={() => handleSize(item)}
+              >
                 {item}
               </button>
             ))}
           </div>
-          <button className="product__button">Adicionar à sacola</button>
+          <button className="product__button" onClick={handleClick}>
+            Adicionar à sacola
+          </button>
         </div>
       </div>
     </div>
   );
 };
 
-export default Product;
+const mapStateToProps = (state) => ({
+  products: state.products,
+});
+
+export default connect(mapStateToProps)(Product);

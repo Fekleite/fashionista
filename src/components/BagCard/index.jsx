@@ -1,41 +1,46 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { FiTrash2 } from "react-icons/fi";
 
 import "./styles.scss";
 
-const BagCard = () => {
+const BagCard = ({ product }) => {
+  const [amount, setAmount] = useState(0);
+
+  function handleControllAmount(op) {
+    op === "+" ? setAmount(amount + 1) : setAmount(amount - 1);
+  }
+
   return (
     <div className="cardBag">
       <div className="cardBag__image">
-        <img
-          src="https://viniciusvinna.netlify.app/assets/api-fashionista/20002945_027_catalog_1.jpg"
-          alt="Imagem do produto"
-        />
+        <img src={product.image} alt={product.name} />
       </div>
 
       <div className="cardBag__description">
         <div className="cardBag__infos">
-          <h2 className="cardBag__name">Bolsa Flap Triangle</h2>
+          <h2 className="cardBag__name">{product.name}</h2>
           <div className="cardBag__prices">
-            <p className="cardBag__price"></p>
-            <p className="cardBag__price--installments"></p>
+            <p className="cardBag__price">{product.price}</p>
+            <p className="cardBag__price--installments">
+              {product.installments}
+            </p>
           </div>
-          <p className="cardBag__sizes">Tamanho: U</p>
+          <p className="cardBag__sizes">Tamanho: {product.size}</p>
         </div>
 
         <div className="cardBag__controlls">
           <div className="cardBag__controlls-amount">
             <button
               className="cardBag__button"
-              // onClick={(e) => handleControllAmount("-")}
+              onClick={(e) => handleControllAmount("-")}
             >
               {" "}
               -{" "}
             </button>
-            <span>0</span>
+            <span> {amount} </span>
             <button
               className="cardBag__button"
-              // onClick={(e) => handleControllAmount("+")}
+              onClick={(e) => handleControllAmount("+")}
             >
               {" "}
               +{" "}

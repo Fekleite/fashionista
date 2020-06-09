@@ -15,6 +15,8 @@ const Home = () => {
   const products = useSelector((state) => state.products);
   const dispatch = useDispatch();
 
+  const productsLength = products.length;
+
   useEffect(() => {
     getProducts().then((response) => {
       dispatch(setProducts(response));
@@ -31,7 +33,7 @@ const Home = () => {
       <div className="photo">
         <a href="#cards">Conheça nossos produtos</a>
       </div>
-      <FilterBar />
+      <FilterBar length={productsLength} />
       <div className="cards" id="cards">
         {products.map((product, index) => (
           <Card product={product} key={index} />
