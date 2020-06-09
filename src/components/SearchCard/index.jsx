@@ -1,22 +1,22 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import "./styles.scss";
 
-const SearchCard = () => {
+const SearchCard = ({ product }) => {
   return (
-    <div className="cardSearch">
-      <div className="cardSearch__image">
-        <img
-          src="https://viniciusvinna.netlify.app/assets/api-fashionista/20002945_027_catalog_1.jpg"
-          alt="Imagem do produto"
-        />
-      </div>
+    <Link to={`/product/${product.id}`} className="link">
+      <div className="cardSearch">
+        <div className="cardSearch__image">
+          <img src={product.image} alt="Imagem do produto" />
+        </div>
 
-      <div className="cardSearch__infos">
-        <h2 className="cardSearch__name">Bolsa Flap Triangle</h2>
-        <p className="cardSearch__price">R$ 159,90</p>
+        <div className="cardSearch__infos">
+          <h2 className="cardSearch__name">{product.name}</h2>
+          <p className="cardSearch__price">{product.actual_price}</p>
+        </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

@@ -1,12 +1,34 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { FiArrowLeft } from "react-icons/fi";
+import { connect } from "react-redux";
 
 import "./styles.scss";
 
 import SearchCard from "../SearchCard";
 
-const Search = ({ handleSearch }) => {
+const Search = ({ handleSearch, products }) => {
   const [search, setSearch] = useState("");
+
+  function handleChangeSearch(event) {
+    const productsSearch = [];
+    const busca = event.target.value;
+    products.map((product, index) => {
+      const c = product.name.toLowerCase();
+      if (busca !== "") {
+        const searching = c.includes(busca.toLowerCase());
+        if (searching) {
+          productsSearch.push({ ...product, id: index });
+          if (productsSearch.length !== "") {
+            setSearch(productsSearch);
+          }
+        }
+        return true;
+      } else {
+        setSearch("");
+        return false;
+      }
+    });
+  }
 
   return (
     <div className="search">
@@ -23,6 +45,7 @@ const Search = ({ handleSearch }) => {
           type="text"
           className="search__form-input"
           placeholder="Buscar por produtos..."
+          onChange={handleChangeSearch}
         />
       </div>
       {search === "" ? (
@@ -31,15 +54,17 @@ const Search = ({ handleSearch }) => {
         </div>
       ) : (
         <div className="search__results">
-          <SearchCard />
-          <SearchCard />
-          <SearchCard />
-          <SearchCard />
-          <SearchCard />
+          {search.map((item, index) => (
+            <SearchCard product={item} key={index} />
+          ))}
         </div>
       )}
     </div>
   );
 };
 
-export default Search;
+const mapStateToProps = (state) => ({
+  products: state.products,
+});
+
+export default connect(mapStateToProps)(Search);

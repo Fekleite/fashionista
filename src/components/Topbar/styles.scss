@@ -40,6 +40,16 @@
     background-color: transparent;
     outline: none;
     cursor: pointer;
+    position: relative;
+  }
+
+  &__span {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: $button-trash-color;
+    position: absolute;
+    left: 89.2%;
   }
 }
 
