@@ -19,11 +19,18 @@ const Product = ({ products }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    getProduct(id, products).then(setProduct);
+    async function handleGetProduct() {
+      getProduct(id, products).then(setProduct);
+    }
+
+    handleGetProduct();
   }, [id, products]);
 
   useEffect(() => {
-    getProductSizes(id, products).then(setSizes);
+    async function handleGetSizes() {
+      getProductSizes(id, products).then(setSizes);
+    }
+    handleGetSizes();
   }, [id, products]);
 
   function handleSize(item) {
@@ -31,6 +38,10 @@ const Product = ({ products }) => {
   }
 
   function handleClick() {
+    if (size === null) {
+      alert("Escolha um tamanho");
+      return;
+    }
     const productBag = {
       id: id,
       image: product.image,
