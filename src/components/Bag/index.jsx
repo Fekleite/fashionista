@@ -1,41 +1,34 @@
 import React, { useState, useEffect } from "react";
 import { FiFrown, FiArrowLeft } from "react-icons/fi";
-import { connect } from "react-redux";
+import { useSelector } from "react-redux";
 
 import "./styles.scss";
 
 import BagCard from "../BagCard";
 
-const Bag = ({ handleBag, productsBag }) => {
-  const [bag, setBag] = useState(0);
+import { formatPrice } from "../../utils";
+
+const Bag = ({ handleBag }) => {
+  const bagSize = useSelector((state) => state.productsBag.length);
+  const bag = useSelector((state) => state.productsBag);
+
   const [subTotal, setSubTotal] = useState(0);
 
-  const length = localStorage.length;
-  let aux = 0;
+  let calculeSubTotal = 0;
 
   useEffect(() => {
-    setBag(length);
-  }, [length]);
-
-  useEffect(() => {
-    setSubTotal(aux);
-  }, [aux]);
+    setSubTotal(calculeSubTotal);
+  }, [calculeSubTotal]);
 
   function handleSubTotal() {
-    return productsBag
-      .map((product) => {
-        const arrayPrices = product.price.split(" ");
-        const stringPrice = arrayPrices[1];
-        const aux = stringPrice.split(",");
-        const numberPrice = Number(aux.join("."));
-        return numberPrice;
-      })
+    return bag
+      .map((product) => formatPrice(product.price))
       .reduce((total, item) => {
         return total + item;
       }, 0);
   }
 
-  aux = handleSubTotal();
+  calculeSubTotal = handleSubTotal();
 
   return (
     <div className="bag">
@@ -51,14 +44,14 @@ const Bag = ({ handleBag, productsBag }) => {
         </div>
       </header>
 
-      {bag === 0 ? (
+      {bagSize === 0 ? (
         <div className="bag__products--empty">
           <p>Sua sacola está vazia</p>
           <FiFrown size={20} color="#393939" />
         </div>
       ) : (
         <div className="bag__products">
-          {productsBag.map((product, index) => (
+          {bag.map((product, index) => (
             <BagCard product={product} key={index} />
           ))}
         </div>
@@ -70,9 +63,4 @@ const Bag = ({ handleBag, productsBag }) => {
     </div>
   );
 };
-
-const mapStateToProps = (state) => ({
-  productsBag: state.productsBag,
-});
-
-export default connect(mapStateToProps)(Bag);
+export default Bag;

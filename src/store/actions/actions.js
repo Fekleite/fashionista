@@ -1,4 +1,8 @@
-import { SET_PRODUCTS, SET_PRODUCTSBAG } from "./actionTypes";
+import {
+  SET_PRODUCTS,
+  SET_PRODUCTSBAG,
+  DELETE_PRODUCT_BAG,
+} from "./actionTypes";
 
 export function setProducts(products) {
   return {
@@ -11,5 +15,12 @@ export function setProductsBag(productsBag) {
   return {
     type: SET_PRODUCTSBAG,
     payload: productsBag,
+  };
+}
+
+export function deleteProductBag(id) {
+  return {
+    type: DELETE_PRODUCT_BAG,
+    payload: id,
   };
 }

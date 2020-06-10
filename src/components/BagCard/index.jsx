@@ -6,9 +6,15 @@ import "./styles.scss";
 const BagCard = ({ product }) => {
   const [amount, setAmount] = useState(1);
 
-  function handleControllAmount(op) {
-    op === "+" ? setAmount(amount + 1) : setAmount(amount - 1);
+  function handleDecrement() {
+    setAmount(amount - 1);
   }
+
+  function handleIncrement() {
+    setAmount(amount + 1);
+  }
+
+  function handleButtonTrash() {}
 
   return (
     <div className="cardBag">
@@ -30,24 +36,21 @@ const BagCard = ({ product }) => {
 
         <div className="cardBag__controlls">
           <div className="cardBag__controlls-amount">
-            <button
-              className="cardBag__button"
-              onClick={(e) => handleControllAmount("-")}
-            >
+            <button className="cardBag__button" onClick={handleDecrement}>
               {" "}
               -{" "}
             </button>
             <span> {amount} </span>
-            <button
-              className="cardBag__button"
-              onClick={(e) => handleControllAmount("+")}
-            >
+            <button className="cardBag__button" onClick={handleIncrement}>
               {" "}
               +{" "}
             </button>
           </div>
           <div className="cardBag__controlls-trash">
-            <button className="cardBag__button--trash">
+            <button
+              className="cardBag__button--trash"
+              onClick={handleButtonTrash}
+            >
               <FiTrash2 size={24} />
             </button>
           </div>

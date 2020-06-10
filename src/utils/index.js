@@ -19,6 +19,14 @@ export function handleScroll() {
   }
 }
 
+export function formatPrice(price) {
+  const arrayPrices = price.split(" ");
+  const stringPrice = arrayPrices[1];
+  const aux = stringPrice.split(",");
+  const numberPrice = Number(aux.join("."));
+  return numberPrice;
+}
+
 // export function handleToWithoutSpaces(name) {
 //   const nameLower = name.toLowerCase();
 //   const arrayWithoutSpaces = nameLower.split(" ");
