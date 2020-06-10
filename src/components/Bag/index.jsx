@@ -9,8 +9,8 @@ import BagCard from "../BagCard";
 import { formatPrice } from "../../utils";
 
 const Bag = ({ handleBag }) => {
-  const bagSize = useSelector((state) => state.productsBag.length);
   const bag = useSelector((state) => state.productsBag);
+  const bagSize = bag.length;
 
   const [subTotal, setSubTotal] = useState(0);
 
@@ -63,4 +63,5 @@ const Bag = ({ handleBag }) => {
     </div>
   );
 };
+
 export default Bag;

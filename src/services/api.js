@@ -6,19 +6,14 @@ export async function getProducts() {
   return products;
 }
 
-export async function getProduct(id, products) {
-  return products[id];
-}
-
 export async function getProductSizes(id, data) {
   const product = data[id];
-  const sizes = [];
-  const aux = product.sizes;
-  aux.map((item) => {
+  const sizesProduct = [];
+  product.sizes.map((item) => {
     if (item.available) {
-      sizes.push(item.size);
+      sizesProduct.push(item.size);
     }
     return true;
   });
-  return sizes;
+  return sizesProduct;
 }

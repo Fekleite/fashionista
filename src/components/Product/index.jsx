@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { FiArrowLeft } from "react-icons/fi";
-import { connect, useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import "./styles.scss";
 
-import { getProduct, getProductSizes } from "../../services/api";
+import { getProductSizes } from "../../services/api";
 
 import { setProductsBag } from "../../store/actions/actions";
 
-const Product = ({ products }) => {
+const Product = () => {
+  const products = useSelector((state) => state.products);
+
   const [product, setProduct] = useState({});
   const [sizes, setSizes] = useState([]);
   const [size, setSize] = useState(null);
@@ -19,18 +21,11 @@ const Product = ({ products }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    async function handleGetProduct() {
-      getProduct(id, products).then(setProduct);
-    }
-
-    handleGetProduct();
-  }, [id, products]);
+    setProduct(products[id]);
+  }, [products, id]);
 
   useEffect(() => {
-    async function handleGetSizes() {
-      getProductSizes(id, products).then(setSizes);
-    }
-    handleGetSizes();
+    getProductSizes(id, products).then(setSizes);
   }, [id, products]);
 
   function handleSize(item) {
@@ -70,10 +65,16 @@ const Product = ({ products }) => {
           <p>Cor: {product.color} </p>
           <div className="product__prices">
             <div className="product__prices--row">
-              <span className="product__price--sale">
-                {product.regular_price}
-              </span>
-              <span className="product__price">{product.actual_price}</span>
+              {product.regular_price !== product.actual_price ? (
+                <>
+                  <span className="product__price--sale">
+                    {product.regular_price}
+                  </span>
+                  <span className="product__price">{product.actual_price}</span>
+                </>
+              ) : (
+                <span className="product__price">{product.actual_price}</span>
+              )}
             </div>
             <span className="product__price--installments">
               {product.installments}
@@ -100,8 +101,4 @@ const Product = ({ products }) => {
   );
 };
 
-const mapStateToProps = (state) => ({
-  products: state.products,
-});
-
-export default connect(mapStateToProps)(Product);
+export default Product;

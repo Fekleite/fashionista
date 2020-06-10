@@ -8,7 +8,7 @@ import FilterBar from "../../components/FilterBar";
 import Card from "../../components/Card";
 import Footer from "../../components/Footer";
 
-import { handleScroll } from "../../utils";
+import { setStyles } from "../../utils";
 import { getProducts } from "../../services/api";
 import { setProducts } from "../../store/actions/actions";
 
@@ -25,7 +25,7 @@ const Home = () => {
   }, [dispatch]);
 
   useEffect(() => {
-    window.onscroll = () => handleScroll();
+    window.onscroll = () => setStyles();
   }, []);
 
   return (
