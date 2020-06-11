@@ -1,8 +1,8 @@
 # Fashionista E-commerce
 
-![Captura de tela de 2020-06-08 18-17-58](https://user-images.githubusercontent.com/48728541/84431318-7d93bb80-ac01-11ea-894e-e501da6dcc12.png)
+## 🔥 Resultado Final
 
-![Captura de tela de 2020-06-09 18-50-54](https://user-images.githubusercontent.com/48728541/84431337-86848d00-ac01-11ea-8da8-9c4121318c5d.png)
+![Captura de tela de 2020-06-08 18-17-58](https://user-images.githubusercontent.com/48728541/84431318-7d93bb80-ac01-11ea-894e-e501da6dcc12.png)
 
 ## 🔥 Cenário
 
@@ -49,14 +49,35 @@ Como um profissional front-end, você será responsável por desenvolver as prin
 - Implemente a funcionalidade de busca em tempo real.
 
 ## 🔥 Endpoint - Catálogo de Produtos
+
 [API do catálogo de produtos](https://5e9935925eabe7001681c856.mockapi.io/api/v1/catalog)
 
-## 🔥 Background Image:
+## 🔥 Background Image
 
 [Background Image - Unsplash](https://unsplash.com/photos/_3Q3tsJ01nc)
 
 ## 🔥 Deploy
+
 A recomendação é para que o deploy seja feito no netilify (gratuito) ou serviço similar - https://www.netlify.com/
+
+## 🔥 Use
+
+Clonando o repositório:
+```
+$ git clone https://github.com/Fekleite/fashionista.git
+$ cd fashionista
+```
+
+Instalando as dependêcias:
+```
+$ npm install
+```
+
+Iniciando a aplicação:
+```
+$ npm start ou yarn start
+```
+
 <br>
 <br>
 <br>
