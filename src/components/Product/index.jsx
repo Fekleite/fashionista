@@ -7,7 +7,7 @@ import "./styles.scss";
 
 import { getProductSizes } from "../../services/api";
 
-import { setProductsBag } from "../../store/actions/actions";
+import { addProductBag } from "../../store/actions/actions";
 
 const Product = () => {
   const products = useSelector((state) => state.products);
@@ -32,21 +32,18 @@ const Product = () => {
     setSize(item);
   }
 
-  function handleClick() {
+  function handleClickAddProduct() {
     if (size === null) {
-      alert("Escolha um tamanho");
+      alert("Escolha o tamanho");
       return;
     }
-    const productBag = {
-      id: id,
-      image: product.image,
-      name: product.name,
-      price: product.actual_price,
-      installments: product.installments,
-      size,
-    };
-
-    dispatch(setProductsBag(productBag));
+    dispatch(
+      addProductBag({
+        ...product,
+        size,
+        id,
+      })
+    );
   }
 
   return (
@@ -92,7 +89,7 @@ const Product = () => {
               </button>
             ))}
           </div>
-          <button className="product__button" onClick={handleClick}>
+          <button className="product__button" onClick={handleClickAddProduct}>
             Adicionar à sacola
           </button>
         </div>

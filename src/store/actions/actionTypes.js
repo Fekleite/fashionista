@@ -1,3 +1,3 @@
 export const SET_PRODUCTS = "SET_PRODUCTS";
-export const SET_PRODUCTSBAG = "SET_PRODUCTSBAG";
-export const DELETE_PRODUCT_BAG = "DELETE_PRODUCT_BAG";
+export const ADD_BAG = "ADD_BAG";
+export const DELETE_BAG = "DELETE_BAG";

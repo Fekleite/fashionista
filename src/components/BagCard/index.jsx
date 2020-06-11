@@ -1,10 +1,14 @@
 import React, { useState } from "react";
 import { FiTrash2 } from "react-icons/fi";
+import { useDispatch } from "react-redux";
 
 import "./styles.scss";
 
+import { deleteProductBag } from "../../store/actions/actions";
+
 const BagCard = ({ product }) => {
   const [amount, setAmount] = useState(1);
+  const dispatch = useDispatch();
 
   function handleDecrement() {
     setAmount(amount - 1);
@@ -14,7 +18,9 @@ const BagCard = ({ product }) => {
     setAmount(amount + 1);
   }
 
-  function handleButtonTrash() {}
+  function handleButtonTrash(id) {
+    dispatch(deleteProductBag(id));
+  }
 
   return (
     <div className="cardBag">
@@ -26,7 +32,7 @@ const BagCard = ({ product }) => {
         <div className="cardBag__infos">
           <h2 className="cardBag__name">{product.name}</h2>
           <div className="cardBag__prices">
-            <p className="cardBag__price">{product.price}</p>
+            <p className="cardBag__price">{product.actual_price}</p>
             <p className="cardBag__price--installments">
               {product.installments}
             </p>
@@ -49,7 +55,7 @@ const BagCard = ({ product }) => {
           <div className="cardBag__controlls-trash">
             <button
               className="cardBag__button--trash"
-              onClick={handleButtonTrash}
+              onClick={() => handleButtonTrash(product.id)}
             >
               <FiTrash2 size={24} />
             </button>

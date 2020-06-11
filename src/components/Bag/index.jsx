@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React /*{ useState, useEffect }*/ from "react";
 import { FiFrown, FiArrowLeft } from "react-icons/fi";
 import { useSelector } from "react-redux";
 
@@ -6,29 +6,30 @@ import "./styles.scss";
 
 import BagCard from "../BagCard";
 
-import { formatPrice } from "../../utils";
+// import { formatPrice } from "../../utils";
 
 const Bag = ({ handleBag }) => {
   const bag = useSelector((state) => state.productsBag);
+  console.log(bag);
   const bagSize = bag.length;
 
-  const [subTotal, setSubTotal] = useState(0);
+  // const [subTotal, setSubTotal] = useState(0);
 
-  let calculeSubTotal = 0;
+  // let calculeSubTotal = 0;
 
-  useEffect(() => {
-    setSubTotal(calculeSubTotal);
-  }, [calculeSubTotal]);
+  // useEffect(() => {
+  //   setSubTotal(calculeSubTotal);
+  // }, [calculeSubTotal]);
 
-  function handleSubTotal() {
-    return bag
-      .map((product) => formatPrice(product.price))
-      .reduce((total, item) => {
-        return total + item;
-      }, 0);
-  }
+  // function handleSubTotal() {
+  //   return bag
+  //     .map((product) => formatPrice(product.actual_price))
+  //     .reduce((total, item) => {
+  //       return total + item;
+  //     }, 0);
+  // }
 
-  calculeSubTotal = handleSubTotal();
+  // calculeSubTotal = handleSubTotal();
 
   return (
     <div className="bag">
@@ -39,7 +40,7 @@ const Bag = ({ handleBag }) => {
           </button>
 
           <div className="bag__title">
-            <h3>Sacola</h3>
+            <h3>Sacola ({bagSize})</h3>
           </div>
         </div>
       </header>
@@ -58,7 +59,7 @@ const Bag = ({ handleBag }) => {
       )}
 
       <footer className="bag__footer">
-        <h3>Subtotal: R$ {subTotal.toFixed(2)} </h3>
+        <h3>Subtotal: R$ 0 </h3>
       </footer>
     </div>
   );

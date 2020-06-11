@@ -1,17 +1,18 @@
 import React, { useState } from "react";
 import { FiSearch, FiShoppingBag } from "react-icons/fi";
-import { connect } from "react-redux";
+import { useSelector } from "react-redux";
 
 import "./styles.scss";
 
 import Bag from "../Bag";
 import Search from "../Search";
 
-const Topbar = ({ productsBag }) => {
+const Topbar = () => {
+  const bag = useSelector((state) => state.productsBag);
+  const bagSize = bag.length;
+
   const [showBag, setShowBag] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
-
-  const productsLength = productsBag.length;
 
   function handleBag() {
     setShowBag(!showBag);
@@ -35,7 +36,7 @@ const Topbar = ({ productsBag }) => {
             <button className="topbar__button" onClick={handleBag}>
               <FiShoppingBag size={24} color="#ffffff" />
             </button>
-            {productsLength ? <span className="topbar__span"></span> : ""}
+            {bagSize ? <span className="topbar__span"></span> : ""}
           </div>
         </div>
       </header>
@@ -46,8 +47,4 @@ const Topbar = ({ productsBag }) => {
   );
 };
 
-const mapStateToProps = (state) => ({
-  productsBag: state.productsBag,
-});
-
-export default connect(mapStateToProps)(Topbar);
+export default Topbar;

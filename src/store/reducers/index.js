@@ -1,4 +1,4 @@
-import { SET_PRODUCTS, SET_PRODUCTSBAG } from "../actions/actionTypes";
+import { SET_PRODUCTS, ADD_BAG, DELETE_BAG } from "../actions/actionTypes";
 
 const INITIAL_STATE = {
   products: [],
@@ -13,10 +13,16 @@ function reducer(state = INITIAL_STATE, { type, payload }) {
         products: payload,
       };
 
-    case SET_PRODUCTSBAG:
+    case ADD_BAG:
       return {
         ...state,
         productsBag: [...state.productsBag, payload],
+      };
+
+    case DELETE_BAG:
+      return {
+        ...state,
+        productsBag: state.productsBag.filter((item) => item.id !== payload),
       };
 
     default:
