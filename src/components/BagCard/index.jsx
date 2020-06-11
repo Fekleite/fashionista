@@ -4,7 +4,10 @@ import { useDispatch } from "react-redux";
 
 import "./styles.scss";
 
-import { deleteProductBag } from "../../store/actions/actions";
+import {
+  deleteProductBag,
+  updateProductAmount,
+} from "../../store/actions/actions";
 
 const BagCard = ({ product }) => {
   const [amount, setAmount] = useState(1);
@@ -12,14 +15,24 @@ const BagCard = ({ product }) => {
 
   function handleDecrement() {
     setAmount(amount - 1);
+    const am = amount - 1;
+    console.log(am);
+    handleProductAmount(product.id, am);
   }
 
   function handleIncrement() {
     setAmount(amount + 1);
+    const am = amount + 1;
+    console.log(am);
+    handleProductAmount(product.id, am);
   }
 
   function handleButtonTrash(id) {
     dispatch(deleteProductBag(id));
+  }
+
+  function handleProductAmount(id, amount) {
+    dispatch(updateProductAmount(id, amount));
   }
 
   return (
@@ -46,7 +59,7 @@ const BagCard = ({ product }) => {
               {" "}
               -{" "}
             </button>
-            <span> {amount} </span>
+            <span> {product.amount} </span>
             <button className="cardBag__button" onClick={handleIncrement}>
               {" "}
               +{" "}

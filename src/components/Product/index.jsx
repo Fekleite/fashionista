@@ -42,6 +42,7 @@ const Product = () => {
         ...product,
         size,
         id,
+        amount: 1,
       })
     );
   }
