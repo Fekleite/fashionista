@@ -28,11 +28,10 @@ const Home = () => {
   }, [dispatch]);
 
   useEffect(() => {
-    window.onscroll = () => setStyles();
-  }, []);
-
-  useEffect(() => {
-    window.onscroll = () => setBack(setBackTop());
+    window.onscroll = () => {
+      setStyles();
+      setBack(setBackTop());
+    };
   }, []);
 
   return (
