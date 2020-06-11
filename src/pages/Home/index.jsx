@@ -7,6 +7,7 @@ import Topbar from "../../components/Topbar";
 import FilterBar from "../../components/FilterBar";
 import Card from "../../components/Card";
 import Footer from "../../components/Footer";
+import BackTop from "../../components/BackTop";
 
 import { setStyles } from "../../utils";
 import { getProducts } from "../../services/api";
@@ -40,6 +41,7 @@ const Home = () => {
           <Card product={product} id={index} key={index} />
         ))}
       </div>
+      <BackTop />
       <Footer />
     </>
   );
