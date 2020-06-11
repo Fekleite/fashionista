@@ -2,71 +2,15 @@
 
 .filterBar {
   width: 85%;
-  min-height: 60px;
+  height: 32px;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: space-between;
+  justify-content: flex-end;
+  align-items: center;
   margin: auto;
   margin-top: 16px;
   color: $primary-color;
 
   @media screen and (min-width: $breakpoint-medium) {
     width: 80%;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  &__content {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 16px;
-
-    @media screen and (min-width: $breakpoint-medium) {
-      width: 60%;
-      padding-top: 0;
-    }
-
-    @media screen and (min-width: $breakpoint-large) {
-      width: 45%;
-      padding-top: 0;
-    }
-
-    @media screen and (min-width: $breakpoint-huge) {
-      width: 35%;
-      padding-top: 0;
-    }
-  }
-
-  &__buttons-container {
-    width: 65%;
-    display: flex;
-    justify-content: space-between;
-
-    @media screen and (min-width: $breakpoint-medium) {
-      width: 65%;
-    }
-    @media screen and (min-width: $breakpoint-huge) {
-      width: 60%;
-    }
-  }
-
-  &__button {
-    padding: 8px 12px;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    background-color: $primary-color;
-    color: $tertiary-color;
-    outline: none;
-    cursor: pointer;
-    transition: 0.3s ease-in-out;
-
-    &:hover {
-      opacity: 0.8;
-    }
   }
 }
