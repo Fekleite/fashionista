@@ -15,6 +15,16 @@ export function setStyles() {
   }
 }
 
+export function setBackTop() {
+  const height = window.innerHeight;
+
+  if (document.documentElement.scrollTop > height * 1.5) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
 export function formatPrice(price) {
   const arrayPrices = price.split(" ");
   const stringPrice = arrayPrices[1].split(",");

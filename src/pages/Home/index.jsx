@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import "./styles.scss";
@@ -9,13 +9,15 @@ import Card from "../../components/Card";
 import Footer from "../../components/Footer";
 import BackTop from "../../components/BackTop";
 
-import { setStyles } from "../../utils";
+import { setStyles, setBackTop } from "../../utils";
 import { getProducts } from "../../services/api";
 import { setProducts } from "../../store/actions/actions";
 
 const Home = () => {
   const products = useSelector((state) => state.products);
   const dispatch = useDispatch();
+
+  const [back, setBack] = useState(false);
 
   const productsLength = products.length;
 
@@ -27,6 +29,10 @@ const Home = () => {
 
   useEffect(() => {
     window.onscroll = () => setStyles();
+  }, []);
+
+  useEffect(() => {
+    window.onscroll = () => setBack(setBackTop());
   }, []);
 
   return (
@@ -41,7 +47,9 @@ const Home = () => {
           <Card product={product} id={index} key={index} />
         ))}
       </div>
-      <BackTop />
+
+      {back && <BackTop />}
+
       <Footer />
     </>
   );
