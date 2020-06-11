@@ -5,8 +5,9 @@ import { useDispatch, useSelector } from "react-redux";
 
 import "./styles.scss";
 
-import { getProductSizes } from "../../services/api";
+import ErrorAlert from "../ErrorAlert";
 
+import { getProductSizes } from "../../services/api";
 import { addProductBag } from "../../store/actions/actions";
 
 const Product = () => {
@@ -15,6 +16,7 @@ const Product = () => {
   const [product, setProduct] = useState({});
   const [sizes, setSizes] = useState([]);
   const [size, setSize] = useState(null);
+  const [alert, setAlert] = useState(false);
 
   const { id } = useParams();
 
@@ -34,7 +36,10 @@ const Product = () => {
 
   function handleClickAddProduct() {
     if (size === null) {
-      alert("Escolha o tamanho");
+      setAlert(true);
+      setTimeout(() => {
+        setAlert(false);
+      }, 3000);
       return;
     }
     dispatch(
@@ -45,10 +50,12 @@ const Product = () => {
         amount: 1,
       })
     );
+    setSize(null);
   }
 
   return (
     <div className="product">
+      {alert && <ErrorAlert />}
       <div className="product__back-link">
         <Link to="/">
           <FiArrowLeft color="#121111" size={24} />

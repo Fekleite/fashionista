@@ -1,0 +1,21 @@
+@import "../../base";
+
+.errorAlert {
+  width: auto;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 100;
+  right: 0;
+  margin-right: 24px;
+  background-color: $button-trash-color;
+  border-radius: 4px;
+  padding: 8px 16px;
+
+  p {
+    margin-left: 16px;
+    font-size: 16px;
+    color: $secondary-color;
+  }
+}
