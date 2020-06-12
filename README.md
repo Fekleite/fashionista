@@ -4,6 +4,12 @@
 
 ![Captura de tela de 2020-06-08 18-17-58](https://user-images.githubusercontent.com/48728541/84431318-7d93bb80-ac01-11ea-894e-e501da6dcc12.png)
 
+## 🔥 Tecnologias
+
+- React
+- Redux
+- Redux Persist
+
 ## 🔥 Cenário
 
 Segundo o levantamento, da Webshoppers (Ebit / Nielsen), os e-commerces brasileiros faturaram cerca de R$ 53,2 bilhões em 2018. O segmento “Moda e Acessórios” representa 5,6% do faturamento no varejo online, ocupando a segunda posição entre as categorias de produtos com mais pedidos, perdendo apenas para o segmento de eletroeletrônicos.
@@ -60,7 +66,7 @@ Como um profissional front-end, você será responsável por desenvolver as prin
 
 [Fashionista E-commerce](https://fekleite-fashionista.netlify.app/)
 
-## 🔥 Use
+## 🔥 Getting started
 
 Clonando o repositório:
 ```
@@ -77,6 +83,11 @@ Iniciando a aplicação:
 ```
 $ npm start ou yarn start
 ```
+
+## 🔥 Licença
+
+Este projeto está licenciado sob a licença MIT - consulte a página [LICENSE] (https://opensource.org/licenses/MIT) para obter detalhes.
+
 
 <br>
 <br>
