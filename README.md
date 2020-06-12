@@ -8,9 +8,13 @@ Fashionista E-commerce
   </a>
 </p>
 
-## Resultado Final
+## Resultado final
 
 ![Captura de tela de 2020-06-08 18-17-58](https://user-images.githubusercontent.com/48728541/84431318-7d93bb80-ac01-11ea-894e-e501da6dcc12.png)
+
+## Layout inicial
+
+[ProjetoFinal.pdf](https://github.com/Fekleite/fashionista/files/4771595/ProjetoFinal.pdf)
 
 ## Tecnologias
 
@@ -66,7 +70,7 @@ Como um profissional front-end, você será responsável por desenvolver as prin
 
 [API do catálogo de produtos](https://5e9935925eabe7001681c856.mockapi.io/api/v1/catalog)
 
-## Background Image
+## Background image
 
 [Background Image - Unsplash](https://unsplash.com/photos/_3Q3tsJ01nc)
 
@@ -94,7 +98,7 @@ $ npm start ou yarn start
 
 ## Licença
 
-Este projeto está licenciado sob a licença MIT - consulte a página [LICENSE] (https://opensource.org/licenses/MIT) para obter detalhes.
+Este projeto está licenciado sob a licença MIT - consulte a página [LICENSE](https://opensource.org/licenses/MIT) para obter detalhes.
 
 
 <br>
@@ -102,4 +106,4 @@ Este projeto está licenciado sob a licença MIT - consulte a página [LICENSE] 
 <br>
 <br>
 
-**Um projeto feito durante o AceleraDev React Online da [Codenation](https://www.codenation.dev/)**
+**Projeto desenvolvido durante o AceleraDev React Online da [Codenation](https://www.codenation.dev/)**
