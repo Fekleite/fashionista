@@ -58,7 +58,7 @@ Como um profissional front-end, você será responsável por desenvolver as prin
 
 ## 🔥 Deploy
 
-A recomendação é para que o deploy seja feito no netilify (gratuito) ou serviço similar - https://www.netlify.com/
+[Fashionista E-commerce](https://fekleite-fashionista.netlify.app/)
 
 ## 🔥 Use
 
