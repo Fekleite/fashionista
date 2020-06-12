@@ -11,6 +11,10 @@
   background-color: $tertiary-color;
   box-shadow: 2px 3px 13px -1px $box-shadow-color;
 
+  &:hover {
+    transform: scale(1.01);
+  }
+
   @media screen and (min-width: $breakpoint-medium) {
     min-height: 364px;
     margin-bottom: 16px;

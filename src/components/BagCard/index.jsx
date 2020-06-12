@@ -14,16 +14,16 @@ const BagCard = ({ product }) => {
   const dispatch = useDispatch();
 
   function handleDecrement() {
-    setAmount(amount - 1);
-    const am = amount - 1;
-    console.log(am);
-    handleProductAmount(product.id, am);
+    if (amount >= 1) {
+      setAmount(amount - 1);
+      const am = amount - 1;
+      handleProductAmount(product.id, am);
+    }
   }
 
   function handleIncrement() {
     setAmount(amount + 1);
     const am = amount + 1;
-    console.log(am);
     handleProductAmount(product.id, am);
   }
 
