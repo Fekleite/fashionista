@@ -19,18 +19,18 @@ export function addProductBag(productsBag) {
   };
 }
 
-export function deleteProductBag(id) {
+export function deleteProductBag(hash) {
   return {
     type: DELETE_BAG,
-    payload: id,
+    payload: hash,
   };
 }
 
-export function updateProductAmount(id, amount) {
+export function updateProductAmount(hash, amount) {
   return {
     type: UPDATE_AMOUNT,
     payload: {
-      id,
+      hash,
       amount,
     },
   };

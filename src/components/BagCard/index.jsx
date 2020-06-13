@@ -17,22 +17,22 @@ const BagCard = ({ product }) => {
     if (amount >= 1) {
       setAmount(amount - 1);
       const am = amount - 1;
-      handleProductAmount(product.id, am);
+      handleProductAmount(product.hash, am);
     }
   }
 
   function handleIncrement() {
     setAmount(amount + 1);
     const am = amount + 1;
-    handleProductAmount(product.id, am);
+    handleProductAmount(product.hash, am);
   }
 
-  function handleButtonTrash(id) {
-    dispatch(deleteProductBag(id));
+  function handleButtonTrash(hash) {
+    dispatch(deleteProductBag(hash));
   }
 
-  function handleProductAmount(id, amount) {
-    dispatch(updateProductAmount(id, amount));
+  function handleProductAmount(hash, amount) {
+    dispatch(updateProductAmount(hash, amount));
   }
 
   return (
@@ -68,7 +68,7 @@ const BagCard = ({ product }) => {
           <div className="cardBag__controlls-trash">
             <button
               className="cardBag__button--trash"
-              onClick={() => handleButtonTrash(product.id)}
+              onClick={() => handleButtonTrash(product.hash)}
             >
               <FiTrash2 size={24} />
             </button>

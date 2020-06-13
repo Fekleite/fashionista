@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { FiArrowLeft } from "react-icons/fi";
 import { useDispatch, useSelector } from "react-redux";
+import crypto from "crypto";
 
 import "./styles.scss";
 
@@ -24,6 +25,8 @@ const Product = () => {
 
   const dispatch = useDispatch();
 
+  const hash = crypto.randomBytes(6).toString("hex");
+
   useEffect(() => {
     setProduct(products[id]);
   }, [products, id]);
@@ -44,19 +47,24 @@ const Product = () => {
       }, 3000);
       return;
     }
+
     dispatch(
       addProductBag({
         ...product,
         size,
         id,
+        hash,
         amount: 1,
       })
     );
+
     setSuccessAlert(true);
     setTimeout(() => {
       setSuccessAlert(false);
     }, 3000);
+
     setSize(null);
+    return;
   }
 
   return (

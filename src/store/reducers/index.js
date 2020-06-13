@@ -27,14 +27,14 @@ function reducer(state = INITIAL_STATE, { type, payload }) {
     case DELETE_BAG:
       return {
         ...state,
-        productsBag: state.productsBag.filter((item) => item.id !== payload),
+        productsBag: state.productsBag.filter((item) => item.hash !== payload),
       };
 
     case UPDATE_AMOUNT:
       return {
         ...state,
         productsBag: state.productsBag.map((item) =>
-          item.id === payload.id
+          item.hash === payload.hash
             ? { ...item, amount: payload.amount }
             : { ...item }
         ),
