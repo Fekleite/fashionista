@@ -44,7 +44,7 @@ const Product = () => {
       setErrorAlert(true);
       setTimeout(() => {
         setErrorAlert(false);
-      }, 3000);
+      }, 2000);
       return;
     }
 
@@ -61,7 +61,7 @@ const Product = () => {
     setSuccessAlert(true);
     setTimeout(() => {
       setSuccessAlert(false);
-    }, 3000);
+    }, 2000);
 
     setSize(null);
     return;
